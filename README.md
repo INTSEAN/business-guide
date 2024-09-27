@@ -47,7 +47,7 @@ While building the app, I encountered challenges with configuring the proxy sett
 
 ## License
 
-Copyright [2023] [Your Name]
+Copyright [2024] [Sean Donovan]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
