@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   root: 'public',
-//   build: {
-//     outDir: '../dist',
-//   },
+  publicDir: 'public',
   build: {
-    outDir: '../server/public',
-    emptyOutDir: true,
+    outDir: '../../server/public',
+    emptyOutDir: false,
+    assetsDir: 'assets',
   },
   server: {
     proxy: {
@@ -16,4 +16,14 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/*.html', 
+          dest: ''              
+        }
+      ]
+    })
+  ]
 });

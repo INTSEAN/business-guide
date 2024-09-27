@@ -58,6 +58,12 @@ const renderTips = async () => {
       console.error('Error fetching tips:', error);
     }
   };
-  
+
+const requestedURL = window.location.pathname.replace('/', '');
+
+if (requestedURL && requestedURL !== 'index.html') {
+  window.location.href = '/404.html';
+} else {
   renderTips();
+}
   
