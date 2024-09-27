@@ -11,7 +11,15 @@ const __dirname = path.dirname(__filename);
 // Serve static files from 'public' directory
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+// Serve static files from client/public (for assets like logo.png, JS files)
+app.use('/client', express.static(path.join(__dirname, '../client/public')));
+
+app.get('/tips/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/tip.html'));
+});
+
 app.use('/tips', tipsRouter);
+
 
 // Root route
 app.get('/', (req, res) => {
